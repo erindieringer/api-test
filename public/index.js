@@ -1,15 +1,26 @@
 $(function() {
 	 var start = Date.now();
 	 var dateString = start.toString();
-	 $.ajax({
-		        type: "Post",
-		        url: "http://localhost:5000/usage/" + dateString + "/" + dateString,
+	//  $.ajax({
+	// 	        type: "Post",
+	// 	        url: "http://localhost:5000/usage/" + dateString + "/" + dateString,
+	// 	        data: {},
+	// 	        success: function(result) {
+	// 	            console.log(result);
+	// 	        },
+	// 	        error: function(result) {
+	// 	            console.log(result);
+	// 	        }
+	// });
+	$.ajax({
+		        type: "Get",
+		        url: "http://localhost:5000/usage/",
 		        data: {},
 		        success: function(result) {
-		            console.log(result);
+		            console.log("sucess", result);
 		        },
 		        error: function(result) {
-		            console.log(result);
+		            console.log("error" + result);
 		        }
 	});
 
@@ -23,15 +34,14 @@ $(function() {
 // 	 $.ajax({
 // 		        type: "Post",
 // 		        url: "http://localhost:5000/usage/" + dateString + "/" + dateString,
-// 		        data: {},
 // 		        dataType: 'jsonp',
-// 		        jsonpCallback: 'usage',
-//         		jsonp: 'callback',
+// 		        // jsonpCallback: 'usage',
+//         		// jsonp: 'callback',
 // 		        success: function(result) {
-// 		            console.log(result);
+// 		            console.log("sucess "+ result);
 // 		        },
 // 		        error: function(result) {
-// 		            console.log(result);
+// 		            console.log("error" + result);
 // 		        }
 // 	});
 // 	function usage(data) {
